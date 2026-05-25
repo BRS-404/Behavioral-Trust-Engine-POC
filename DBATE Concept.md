@@ -1,16 +1,16 @@
-												ARCHITECTURAL SPECIFICATION: DISTRIBUTED BEHAVIOR-AGNOSTIC TRUST ENGINE (DBATE)
-												
+# Architectural Specification: Distributed Behavior-Agnostic Trust Engine (DBATE)
 
-SECTION 1: SYSTEM OVERVIEW AND CORE PHILOSOPHY
+## SECTION 1: SYSTEM OVERVIEW AND CORE PHILOSOPHY
 
-The Distributed Behavior-Agnostic Trust Engine (BATE) is a backend-agnostic, polymorphic heuristic state machine designed to analyze client-server transaction telemetry and mitigate automated or malicious activity. Unlike traditional reactive, binary rate-limiters that rely on static thresholds, the BATE aggregates multi-layered historical data over user-defined temporal windows to establish a behavioral Modus Operandi for each network entity.
+The Distributed Behavior-Agnostic Trust Engine (DBATE) is a backend-agnostic, polymorphic heuristic state machine designed to analyze client-server transaction telemetry and mitigate automated or malicious activity. Unlike traditional reactive, binary rate-limiters that rely on static thresholds, the DBATE aggregates multi-layered historical data over user-defined temporal windows to establish a behavioral Modus Operandi for each network entity.
 
 The core heuristic engine enforces a Deterministic Human Cadence Boundary. It predicates its threat modeling on immutable physical constraints, calculating the minimum latency required for visual propagation, cognitive processing, and neuromuscular execution. This is based on the physical loop of pressing and releasing a button.
 
 Transactions occurring consistently below this human floor indicate automation. However, the system accounts for human and network reality by factoring in a Margin of Error. This allows the framework to absorb isolated chaotic spikes as statistical noise, dynamically escalating penalties only when sustained malice or structural automation is verified.
 
+---
 
-SECTION 2: INFRASTRUCTURE CONFIGURATION SCHEMA
+## SECTION 2: INFRASTRUCTURE CONFIGURATION SCHEMA
 
 By routing configuration through a database table rather than a static config file, BATE acts as a centralized policy engine. It can be deployed within a DMZ or a central data warehouse to protect multiple decoupled endpoints or edge servers asynchronously. This configuration layer provides administrators with direct, granular control over the resolution of the scoring scale, penalty timeout formulas, and explicit time-decay or recovery velocity weights.
 
@@ -18,42 +18,45 @@ The primary configuration table is defined as follows. The column policy_id serv
 
 Operational Compliance Strategy Modes can be configured as follows:
 
-Binary Defcon Mode: The scale is restricted tightly from 0 to 1. A single deterministic breach immediately drops the account score to 0 and fires a hard session disconnect. This is designed for high-stakes environments like eSports tournaments or financial gateways.
+* **Binary Defcon Mode:** The scale is restricted tightly from 0 to 1. A single deterministic breach immediately drops the account score to 0 and fires a hard session disconnect. This is designed for high-stakes environments like eSports tournaments or financial gateways.
 
-Granular Telemetry Mode: The scale is expanded broadly from 0 to 10000. Points are deducted in micro-units, allowing data analysts to map long-term behavioral curves and flag ultra-slow human-emulating bots.
+* **Granular Telemetry Mode:** The scale is expanded broadly from 0 to 10000. Points are deducted in micro-units, allowing data analysts to map long-term behavioral curves and flag ultra-slow human-emulating bots.
 
-Balanced Human Mode: The scale is locked from 0 to 10. This implements the full psychology for computers framework, providing high tolerance for real-world network turbulence while clamping down on systemic abuse.
+* **Balanced Human Mode:** The scale is locked from 0 to 10. This implements the full psychology for computers framework, providing high tolerance for real-world network turbulence while clamping down on systemic abuse.
 
+---
 
-SECTION 3: TELEMETRY MATRIX SCHEMA
+## SECTION 3: TELEMETRY MATRIX SCHEMA
 
 Designed for ultra-high-speed asynchronous writes and minimal memory footprints, this ledger tracks transactional velocity and cross-references hardware and account identity matrices to prevent multi-accounting exploitation.
 
 The telemetry matrix table is structured around a binary uuid primary key. The user footprint is tracked via account_id and device_id. Volatility parameters are split into volatility_short_term and volatility_long_term counters. Chronic system abuse is recorded permanently in historical_max_counter. The core timing measurement is stored inside quantized_delta_t, which rounds raw timestamps to the nearest 3-second or 5-second integer bucket to minimize CPU checking overhead. The final calculated runtime reputation is output into trust_confidence_index.
 
+---
 
-SECTION 4: RUNTIME SYSTEM LOGIC FLOW
+## SECTION 4: RUNTIME SYSTEM LOGIC FLOW
 
 The runtime architecture processes incoming packets through eight pipelined, non-blocking components executing in a specific order:
 
-First is the Communications Logger, which intercepts client-server opcode transactions and calculates immediate cadence.
+1. **Communications Logger:** Intercepts client-server opcode transactions and calculates immediate cadence.
 
-Second are the Nested Timers, which evaluate traffic within concurrent short-term and long-term tracking frames.
+2. **Nested Timers:** Evaluates traffic within concurrent short-term and long-term tracking frames.
 
-Third are the Nested Counters, which increment active localized integers when transaction cadences violate set boundaries.
+3. **Nested Counters:** Increments active localized integers when transaction cadences violate set boundaries.
 
-Fourth is the Database Hook and Quantization Processor, which packs high-precision time deltas into fixed integer buckets for optimized storage scaling.
+4. **Database Hook and Quantization Processor:** Packs high-precision time deltas into fixed integer buckets for optimized storage scaling.
 
-Fifth is the Heartbeat Ticker, which monitors connection health metrics. If a transaction burst occurs but is immediately followed by a socket-drop event, the engine infers packet loss catchup or an unstable line. The penalty is suppressed, preventing false positives for players with poor internet stability.
+5. **Heartbeat Ticker:** Monitors connection health metrics. If a transaction burst occurs but is immediately followed by a socket-drop event, the engine infers packet loss catchup or an unstable line. The penalty is suppressed, preventing false positives for players with poor internet stability.
 
-Sixth is the Netcode Stack Tracker, which evaluates sequential opcode strings to differentiate between standard human navigation loops and synthetic execution patterns designed to lock database resources.
+6. **Netcode Stack Tracker:** Evaluates sequential opcode strings to differentiate between standard human navigation loops and synthetic execution patterns designed to lock database resources.
 
-Seventh is the Dynamic Rate-Throttle, which applies silent, elastic friction to suspicious accounts based on the dynamic Timeout Increment Formula.
+7. **Dynamic Rate-Throttle:** Applies silent, elastic friction to suspicious accounts based on the dynamic Timeout Increment Formula.
 
-Eighth is the Hard Session Drop Condition, which serves as the ultimate enforcement threshold, closing active sockets instantly when automated tool signatures are identified with algorithmic certainty.
+8. **Hard Session Drop Condition:** Serves as the ultimate enforcement threshold, closing active sockets instantly when automated tool signatures are identified with algorithmic certainty.
 
+---
 
-SECTION 5: KINETIC SCORING MATH AND ASYMMETRIC SELF-HEALING
+## SECTION 5: KINETIC SCORING MATH AND ASYMMETRIC SELF-HEALING
 
 The runtime calculation of the trust confidence index uses a deduction-based approach combined with compounding momentum, historical risk multipliers, and asymmetric recovery velocity.
 
@@ -67,15 +70,16 @@ The Asymmetric TCI Self-Healing equation establishes that the recovery delta sca
 
 The Retroactive Netcode Reconciliation loop ensures that when a massive burst occurs, the engine instantly applies a pending deduction to insulate server resources. It checks the sequential opcode stream over subsequent frames. If the pattern reveals a signature matching a client crash loop or a forced network flush rather than synthetic abuse, the penalty is reverted and wiped, restoring the user's reputation index perfectly.
 
+---
 
-SECTION 6: ACCESS CONTROL AND DIAGNOSTIC TELEMETRY PROBES
+## SECTION 6: ACCESS CONTROL AND DIAGNOSTIC TELEMETRY PROBES
 
 To manage visibility within the administrative web portal and facilitate live debugging, the scoring matrix reserves a special sentinel status index value of 11 or negative 1.
 
-Under the System Exempt Admin classification (Score Tier 11 or negative 1), the account acts as a Live Telemetry Probe. It bypasses actual throttling or friction, but runs the full heuristic loop to generate verbose diagnostic JSON payloads for safe production debugging. This tier grants full read and write root access to telemetry data logs, policy tables, and configuration management in the web management portal.
+* **System Exempt Admin (Score Tier 11 or negative 1):** The account acts as a Live Telemetry Probe. It bypasses actual throttling or friction, but runs the full heuristic loop to generate verbose diagnostic JSON payloads for safe production debugging. This tier grants full read and write root access to telemetry data logs, policy tables, and configuration management in the web management portal.
 
-Under the Trusted Clean classification (Score Tier 10), the account represents a pristine baseline. Normal human traffic bypasses active throttling checks to preserve server CPU resources. Internal staff lookups in the portal are masked for privacy, showing only a basic status message stating that the account is compliant at ten out of ten.
+* **Trusted Clean (Score Tier 10):** The account represents a pristine baseline. Normal human traffic bypasses active throttling checks to preserve server CPU resources. Internal staff lookups in the portal are masked for privacy, showing only a basic status message stating that the account is compliant at ten out of ten.
 
-Under the Active Heuristic classification (Score Tier 1 to 9), the account sits within the dynamic tracking range under the volatility matrix. Elastic, silent throttling applies based on score degradation. In the web portal, this is displayed to moderators as an active compliance risk rating indicating a volatility warning.
+* **Active Heuristic (Score Tier 1 to 9):** The account sits within the dynamic tracking range under the volatility matrix. Elastic, silent throttling applies based on score degradation. In the web portal, this is displayed to moderators as an active compliance risk rating indicating a volatility warning.
 
-Under the Enforced Blacklist classification (Score Tier 0), the account faces a hard lockdown. Sockets are dropped at the connection gateway and identity arrays are fully blacklisted. The web portal displays these entries as an audit trail view for administrative review, forensic logging, and appeal processing.
+* **Enforced Blacklist (Score Tier 0):** The account faces a hard lockdown. Sockets are dropped at the connection gateway and identity arrays are fully blacklisted. The web portal displays these entries as an audit trail view for administrative review, forensic logging, and appeal processing.
