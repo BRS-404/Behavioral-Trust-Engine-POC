@@ -12,16 +12,17 @@ The Culture: If you deploy it at your network edge, you can officially tell your
 
 Core Pillars of the Framework
 1. The Deterministic Human Floor
-  Instead of relying on reactive, easily bypassable packet-counting limits, DBATE builds its threat model on physical reality. It calculates a Deterministic Human Cadence Boundary based on immutable biological constraints: the speed of light hitting the retina, central nervous system processing latency, and physical neuromuscular engagement (the loop of pressing and releasing a mechanical switch). If an account consistently executes loops faster than human anatomy allows, DBATE resolves the internal debate with algorithmic certainty.
+Instead of relying on reactive, easily bypassable packet-counting limits, DBATE builds its threat model on physical reality. It calculates a Deterministic Human Cadence Boundary based on immutable biological constraints: the speed of light hitting the retina, central nervous system processing latency, and physical neuromuscular engagement (the loop of pressing and releasing a mechanical switch). If an account consistently executes loops faster than human anatomy allows, DBATE resolves the internal debate with algorithmic certainty.
 
-3. Infrastructure-Wide Centralized Policy
-  By moving security configurations out of static local application files and into a dedicated configuration table, DBATE allows system administrators to adjust scale resolution, threshold strictness, and penalty multipliers across an entire cluster instantly via a single database update.
+2. Infrastructure-Wide Centralized Policy
+By moving security configurations out of static local application files and into a dedicated configuration table, DBATE allows system administrators to adjust scale resolution, threshold strictness, and penalty multipliers across an entire cluster instantly via a single database update.
 
-4. Kinetic Penalty Momentum and Healing Resistance
-  Threats are not linear, and DBATE treats them dynamically. The system implements compounding penalty multipliers for repeated infractions inside short-term windows, alongside an automatic Singularity Gate for blunt, sub-millisecond bot bursts. Conversely, the self-healing recovery equation scales inversely with an entity's permanent lifetime violation history. Squeaky-clean accounts experience up to a 100x recovery speed boost for technical anomalies, while chronic offenders encounter heavy healing resistance that traps them in restricted tiers.
+3. Kinetic Penalty Momentum and Healing Resistance
+Threats are not linear, and DBATE treats them dynamically. The system implements compounding penalty multipliers for repeated infractions inside short-term windows, alongside an automatic Singularity Gate for blunt, sub-millisecond bot bursts. Conversely, the self-healing recovery equation scales inversely with an entity's permanent lifetime violation history. Squeaky-clean accounts experience up to a 100x recovery speed boost for technical anomalies, while chronic offenders encounter heavy healing resistance that traps them in restricted tiers.
 
-5. Asynchronous Connection Resiliency
-  To protect users with poor internet service providers, DBATE integrates a synchronized heartbeat monitor. If a sudden burst of transactions is immediately followed by a network drop or socket disconnect, the system infers a technical buffer flush rather than a malicious macro exploit and suppresses the penalty entirely.
+4. Asynchronous Connection Resiliency
+To protect users with poor internet service providers, DBATE integrates a synchronized heartbeat monitor. If a sudden burst of transactions is immediately followed by a network drop or socket disconnect, the system infers a technical buffer flush rather than a malicious macro exploit and suppresses the penalty entirely.
+
 
 System Architecture Blueprint
 
